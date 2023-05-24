@@ -108,13 +108,13 @@ def recommendation_page():
     st.title("Recommendation System for Mindanao Tourist Trip Packages")
     st.markdown(
         """
-        This recommender system suggests travel packages in Mindanao based on the user's preferred activity, budget, and previous destination. It uses a content-based approach to match their preferences with the characteristics of the destinations.
+        This recommender system suggests travel packages in Mindanao based on the user's preferred activity, duration, budget, and previous destination. It uses a content-based approach to match their preferences with the characteristics of the destinations.
 
         The system analyzes the textual descriptions of destinations using TF-IDF vectorization to capture important terms and computes cosine similarity to measure text similarity.
 
         If there is an exact match between the preferred activity and a destination in Mindanao, those destinations will be recommended. Otherwise, the system will find destinations in Mindanao that are similar to the preferred destination based on their textual descriptions. It also considers the similarity between your preferred activity and the activities associated with the destinations using Spacy's similarity measure.
 
-        To get personalized recommendations, enter the previous destination, preferred activity, and budget, and the system will suggest the best matches for the tourist packages in Mindanao.
+        To get personalized recommendations, enter the previous destination, preferred activity, duration, and budget, and the system will suggest the best matches for the tourist packages in Mindanao.
         """
     )
 
