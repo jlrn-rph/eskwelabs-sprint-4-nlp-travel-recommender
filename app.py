@@ -123,9 +123,9 @@ def recommendation_page():
     data_luzvis = data[data['region'] != 'Mindanao']
 
     user_destination = st.selectbox("Where is your travel inspiration?", data_luzvis['location'].unique())
-    user_activity = st.text_input("What do you want to do?")
+    user_activity = st.text_input("What activity do you want to do?")
     user_budget = st.number_input("How much budget do you have?", min_value=5.0, max_value=160000.0)
-    user_duration = st.number_input("How long do you want you trip to last?", min_value=0.0, max_value=120.0)
+    user_duration = st.number_input("How long do you want the trip to last?", min_value=0.0, max_value=120.0)
 
     if st.button("Tara!"):
         try:
@@ -161,7 +161,7 @@ def the_team():
         """
         We are the team **chatgpt4**! We are a group of individuals from diverse backgrounds who came together as part of the Eskwelabs Data Science Cohort 11. In our fourth sprint, we collaborated to create a data-driven presentation on NLP-based recommender engine entitled **Lakbay Mindanao: A Data-Driven Journey Through the Hidden Gems of the South**. 
 
-        The project uses data scraped from Klook and TripAdvisor, which is preprocessed by tokenization, lemmatization, and other NLP-based preprocessing techniques. It is wrangled and analyzed using Python Pandas, exploratory data analysis using Matplotlib, and similarity techniques using TF-IDF and spaCy similarity . Recommender engines were also utilized to provide personalized recommendation for potential travel packages. in Mindanao
+        The project uses data scraped from Klook and TripAdvisor, which is preprocessed by tokenization, lemmatization, and other NLP-based preprocessing techniques. It is wrangled and analyzed using Python Pandas, exploratory data analysis using Matplotlib, and similarity techniques using TF-IDF and spaCy similarity . Recommender engines were also utilized to provide personalized recommendation for potential travel packages in Mindanao.
         """
     )
     st.header("Members")
