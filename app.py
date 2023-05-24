@@ -50,7 +50,7 @@ def recommend_destination(user_destination, user_activity, user_budget, user_dur
         return pd.DataFrame()
 
     # Filter data based on the Mindanao region and exact activity match
-    mindanao_exact_data = data[(data['region'] == 'Mindanao') & (data['activity'] == user_activity) & (data['duration'] <= user_duration)]
+    mindanao_exact_data = data[(data['region'] == 'Mindanao') & (data['activity'] == user_activity) & (data['duration'] <= user_duration) & (data['price'] <= user_budget)]
 
     if not mindanao_exact_data.empty:
         # Exact activity match found in Mindanao, return the top 3 recommendations
@@ -93,7 +93,7 @@ def recommend_destination(user_destination, user_activity, user_budget, user_dur
     recommended_destinations['average_similarity'] = (recommended_destinations['activity_similarity'] + recommended_destinations['cosine_similarity']) / 2.0
 
     # Filter recommendations based on duration
-    filtered_destinations = recommended_destinations[recommended_destinations['duration'] <= user_duration]
+    filtered_destinations = recommended_destinations[(recommended_destinations['duration'] <= user_duration) & (recommended_destinations['price'] <= user_budget)]
 
     # Sort recommendations based on average similarity
     sorted_destinations = filtered_destinations.sort_values(by='average_similarity', ascending=False)
@@ -122,7 +122,7 @@ def recommendation_page():
 
     data_luzvis = data[data['region'] != 'Mindanao']
 
-    user_destination = st.selectbox("Where did you go?", data_luzvis['location'].unique())
+    user_destination = st.selectbox("Where is your travel inspiration?", data_luzvis['location'].unique())
     user_activity = st.text_input("What do you want to do?")
     user_budget = st.number_input("How much budget do you have?", min_value=5.0, max_value=160000.0)
     user_duration = st.number_input("How long do you want you trip to last?", min_value=0.0, max_value=120.0)
