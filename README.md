@@ -4,7 +4,7 @@ We are the team **chatgpt4**! We are a group of individuals from diverse backgro
 The project uses data scraped from Klook and TripAdvisor, which is preprocessed by tokenization, lemmatization, and other NLP-based preprocessing techniques. It is wrangled and analyzed using Python Pandas, exploratory data analysis using Matplotlib, and similarity techniques using TF-IDF and spaCy similarity . Recommender engines were also utilized to provide personalized recommendation for potential travel packages in Mindanao.
 
 ## Project Deployment
-[Lakbay Mindanao: A Data-Driven Journey Through the Hidden Gems of the South Deployment](https://chatgpt4-travel-recommender.streamlit.app/)
+[Lakbay Mindanao: A Data-Driven Journey Through the Hidden Gems of the South Deployment](https://eskchatgpt4-travel-recommender.streamlit.app/)
 
 ## How to Run Locally
 To run the code, please follow these steps:
