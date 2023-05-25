@@ -123,9 +123,9 @@ def recommendation_page():
     data_luzvis = data[data['region'] != 'Mindanao']
 
     user_destination = st.selectbox("Where is your travel inspiration?", data_luzvis['location'].unique())
-    user_activity = st.text_input("What activity do you want to do?")
+    user_activity = st.text_input("What activity do you want to do?", placeholder="e.g. Day Trips, Hiking, etc.")
     user_budget = st.number_input("How much budget do you have?", min_value=5.0, max_value=160000.0)
-    user_duration = st.number_input("How long do you want the trip to last?", min_value=0.0, max_value=120.0)
+    user_duration = st.number_input("How long do you want the trip to last (in hours)?", min_value=0.0, max_value=120.0)
 
     if st.button("Tara!"):
         try:
