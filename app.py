@@ -65,7 +65,7 @@ def recommend_destination(user_destination, user_activity, user_budget, user_dur
     mindanao_data['preprocessed_description'] = mindanao_data['description_clean'].apply(preprocess_text)
 
     # Compute TF-IDF vectors for the Mindanao destination descriptions
-    tfidf = TfidfVectorizer()
+    tfidf = TfidfVectorizer(stop_words='english', use_idf=True)
     mindanao_tfidf_matrix = tfidf.fit_transform(mindanao_data['preprocessed_description'])
 
     # Compute TF-IDF vectors for the user's destination descriptions
